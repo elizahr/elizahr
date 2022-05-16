@@ -1,0 +1,10 @@
+import pandas as pd
+import requests
+
+# Get the dataset metadata by passing package_id to the package_search endpoint
+# For example, to retrieve the metadata for this dataset:
+
+url = "https://ckan0.cf.opendata.inter.prod-toronto.ca/api/3/action/package_show"
+params = { "id": "76ea33f1-31f0-42ea-a295-385fb4d94ea9"}
+package = requests.get(url, params = params).json()
+print(package["result"])
